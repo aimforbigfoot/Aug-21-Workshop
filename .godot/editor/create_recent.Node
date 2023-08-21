@@ -1,3 +1,6 @@
+Button
+Label
+ColorRect
 CollisionShape2D
 Area2D
 RayCast2D

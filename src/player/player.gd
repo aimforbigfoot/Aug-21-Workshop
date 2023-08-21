@@ -42,11 +42,10 @@ func _physics_process(delta: float) -> void:
 		ySpeed += JUMP_STRENGTH
 		jumpCount += 1
 		$AnimatedSprite2D.play("jump")
-		
-		
-		
-
-
+	
 	velocity = Vector2( xSpeed, ySpeed)
 	move_and_slide()
 
+func die() -> void:
+	get_tree().change_scene_to_file("res://src/UI_Scenes/game_over.tscn")
+	pass

@@ -1,1 +1,8 @@
+res://src/UI_Scenes/game_over.tscn
+res://src/UI_Scenes/game_over.gd
 res://src/player/player.tscn
+res://src/player/player.gd
+res://src/goomba/goomba.tscn
+res://src/goomba/goomba.gd
+res://src/world.tscn
+res://src/player/block.tscn
