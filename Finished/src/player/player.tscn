@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdryukgfne1"]
+
+[ext_resource type="Script" path="res://src/player/player.gd" id="1_bx5cb"]
+[ext_resource type="Texture2D" uid="uid://c23fyqpr28xrb" path="res://assets/tile_0286.png" id="2_2lbb0"]
+[ext_resource type="Texture2D" uid="uid://dqa1llnxge3ld" path="res://assets/tile_0280.png" id="2_7tf5q"]
+[ext_resource type="Texture2D" uid="uid://yl3ou5u8segh" path="res://assets/tile_0282.png" id="3_16rm0"]
+[ext_resource type="Texture2D" uid="uid://dmyfrybg0snrj" path="res://assets/tile_0285.png" id="3_31chk"]
+[ext_resource type="Texture2D" uid="uid://dwjc1fd2hd1lh" path="res://assets/tile_0283.png" id="4_pqql8"]
+[ext_resource type="Texture2D" uid="uid://ct6hij1g7kwjm" path="res://assets/tile_0284.png" id="5_86wlo"]
+[ext_resource type="Texture2D" uid="uid://vv5yl6ciaimv" path="res://assets/tile_0281.png" id="6_r806f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_do4tk"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg01c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2lbb0")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7tf5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_31chk")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_16rm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pqql8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_86wlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pqql8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_16rm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r806f")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_bx5cb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_do4tk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = -10000
+limit_top = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lg01c")
+autoplay = "default"
