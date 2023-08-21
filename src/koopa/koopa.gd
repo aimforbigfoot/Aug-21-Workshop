@@ -16,10 +16,8 @@ func bodyEntered(body:Node2D) -> void:
 	if body.name == "player" and isAlive:
 		if body.global_position.y < global_position.y:
 			xSpeed = 0 
-			$AnimatedSprite2D.play("dead")
 			$bodyChecker/CollisionShape2D.queue_free()
 			isAlive = false
-			set_physics_process(false)
 		else:
 			body.die() #lots to talk abt with doing smth like this
 			
@@ -32,5 +30,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func jump() -> void:
-	ySpeed = 0
-	ySpeed += jumpStrength
+	if isAlive:
+		ySpeed = 0
+		ySpeed += jumpStrength
