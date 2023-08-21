@@ -1,4 +1,5 @@
 res://src/world.tscn
+res://assets/new_tile_set.tres
 res://src/player/player.tscn
 res://src/player/block.tscn
 res://src/goomba/goomba.tscn
@@ -6,5 +7,3 @@ res://src/UI_Scenes/game_over.tscn
 res://src/door/door.tscn
 res://src/level_2.tscn
 res://src/koopa/koopa.tscn
-res://src/koopa/koopa.gd
-res://src/door/door.gd
