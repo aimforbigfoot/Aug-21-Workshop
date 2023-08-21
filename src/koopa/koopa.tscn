@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4l7k232l4tjv"]
+
+[ext_resource type="Texture2D" uid="uid://nb2qnk8ovnqa" path="res://assets/monochrome_tilemap_transparent_packed.png" id="1_q27fq"]
+[ext_resource type="Script" path="res://src/koopa/koopa.gd" id="1_wo3w6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4mle"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umm14"]
+size = Vector2(18, 15)
+
+[node name="koopa" type="CharacterBody2D"]
+script = ExtResource("1_wo3w6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m4mle")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("1_q27fq")
+region_enabled = true
+region_rect = Rect2(66, 292, 12, 12)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="bodyChecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bodyChecker"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_umm14")
